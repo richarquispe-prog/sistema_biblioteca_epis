@@ -1,0 +1,104 @@
+* {
+    box-sizing: border-box;
+}
+
+.contenedor {
+    width: 100%;
+    margin: auto;
+    padding: 40px;
+    max-width: 1200%;
+}
+
+
+/*PORTADA DE LIBROS - MENU ESTUDIANTE*/
+
+.portada {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: auto;
+    gap: 10px;
+}
+
+.port {
+    border-radius: 10px;
+    min-height: 200px;
+    font-weight: bold;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center center;
+}
+
+.port .title {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.title .name-libro {
+    display: flex;
+    grid-template-columns: repeat(1, 5fr);
+    height: 60px;
+    width: auto;
+    grid-gap: 10px;
+}
+
+.title .title-inf {
+    display: grid;
+    grid-template-columns: repeat(1, 5fr);
+    height: 60px;
+    width: auto;
+    grid-gap: 10px;
+}
+
+.section-title {
+    margin: 50px 0px 50px 0px;
+}
+
+.section-title h2 {
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+#portfolio .portfolio-list {
+    margin-bottom: 50px;
+}
+
+#portfolio .portfolio-list .nav {
+    display: inline-block;
+}
+
+#portfolio .portfolio-list .nav li {
+    margin: 10px 30px 10px 30px;
+    font-size: 16px;
+    color: #000;
+    line-height: 16px;
+    cursor: pointer;
+    font-family: 'Josefin sans', Sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-transform: capitalize;
+    float: none;
+    display: inline-block;
+}
+
+#portfolio .portfolio-list .nav li:hover,
+#portfolio .portfolio-list .nav li.filter-active {
+    color: #b8a07e;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.portfolio-thumbnail {
+    margin-bottom: 10px;
+    overflow: hidden;
+    min-height: 260px;
+}
+
+.portfolio-thumbnail img {
+    width: 400px;
+    height: 250px;
+}

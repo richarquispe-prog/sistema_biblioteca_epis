@@ -28,7 +28,7 @@
             <h1>SISTEMA DE BIBLIOTECA</h1>
             <p>Escuela Profesional de Ingenieria de Sistemas</p>
         </div>
-        <!--AQUI TENDREMOS DIFERENTES NAVEGADORES DE VENTANA DE INICIO-->
+        <!--AQUI TENDREMOS DIFERENTES LISTAS DE MENU DE VENTANA DE INICIO-->
         <nav class="nav">
             <div class="nav__columna nav__pull"></div>
             <ul class="nav__columna nav__enlaces">

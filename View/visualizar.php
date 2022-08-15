@@ -50,7 +50,7 @@
 		<div class="mb-3">
 			<label>Formato:</label><input type="text"  name="titulo" class="form-control" aria-label="Disabled input example" disabled value="<?php echo $mostrar['formato'] ?>" >
 		</div>
-		<center> <a href="catalogo.php" class="btn btn-secondary">Volver</a>
+		<center> <a href="catalogo_estudiante.php" class="btn btn-secondary">Volver</a>
 		<!--	<button type="button" class="btn btn-primary">Prestar</button>-->
 
 
@@ -151,7 +151,7 @@ DATOS DEL LIBRO
 		<div class="mb-3">
 			<label>Formato:</label><input type="text"  name="titulo" class="form-control" aria-label="Disabled input example" disabled value="<?php echo $mostrar['formato'] ?>" >
 		</div>
-		<center> <a href="catalogo.php" class="btn btn-secondary">Volver</a>
+		<center> <a href="catalogo_estudiante.php" class="btn btn-secondary">Volver</a>
 		<!--	<button type="button" class="btn btn-primary">Prestar</button>-->
 			 
 

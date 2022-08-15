@@ -150,7 +150,7 @@ while($mostrar=mysqli_fetch_array($result)){?>
                     <br>
                     <form action="" method="post">
 
-                        <center> <a href="catalogo.php" class="btn btn-secondary">Cancelar</a>
+                        <center> <a href="catalogo_estudiante.php" class="btn btn-secondary">Cancelar</a>
 
                             <input type="submit" value="Aceptar Boleta" class="btn btn-primary" name="v">
 

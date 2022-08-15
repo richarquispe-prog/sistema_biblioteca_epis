@@ -44,28 +44,28 @@ while($mostrar=mysqli_fetch_array($result)){
                             </div>
                             <div class="mb-3">
                                 <label>Dewey:</label><input type="text" name="dewewey" class="form-control"
-                                    value="<?php echo $mostrar['dewey'] ?>"> <!-- se muestra el numero de dewey -->
+                                    value="<?php echo $mostrar['dewey'] ?>"> <!-- se muestra el numero de dewey del libro -->
                             </div>
                             <div class="mb-3">
                                 <label>Titulo:</label><input type="text" name="titulo" class="form-control"
-                                    value="<?php echo $mostrar['titulo'] ?>">
+                                    value="<?php echo $mostrar['titulo'] ?>"> <!-- se muestra el numero el titulo de libro-->
                             </div>
                             <div class="mb-3">
                                 <label>Autor:</label><input type="text" name="autor" class="form-control"
-                                    value="<?php echo $mostrar['autor'] ?>">
+                                    value="<?php echo $mostrar['autor'] ?>"> <!-- se muestra el autor del libro -->
                             </div>
                             <div class="mb-3">
                                 <label>Fecha Edicion:</label><input type="date" name="fecha" class="form-control"
-                                    value="<?php echo $mostrar['fecha_edicion'] ?>">
+                                    value="<?php echo $mostrar['fecha_edicion'] ?>"> <!-- se muestra la fecha de edicion del libro -->
                             </div>
                             <div class="mb-3">
                                 <label>Editorial:</label><input type="text" name="editorial" class="form-control"
-                                    value="<?php echo $mostrar['editorial'] ?>">
+                                    value="<?php echo $mostrar['editorial'] ?>"> <!-- se muestra el aditorial del libro-->
                             </div>
 
                             <div class="mb-3">
                                 <label>Fecha Adquisicion:</label><input type="date" name="fecha_ad" class="form-control"
-                                    value="<?php echo $mostrar['fecha_adquisicion'] ?>">
+                                    value="<?php echo $mostrar['fecha_adquisicion'] ?>"> <!-- se muestra la adquision del libro-->
                             </div>
 
                             <div class="mb-3">
@@ -74,14 +74,14 @@ while($mostrar=mysqli_fetch_array($result)){
                             </div>
                             <div class="mb-3">
                                 <input type="hidden" name="estado" class="form-control"
-                                    value="<?php echo $mostrar['estado'] ?>">
+                                    value="<?php echo $mostrar['estado'] ?>"> <!-- muestra el estado del libro -->
                             </div>
                             <div class="mb-3">
                                 <label>Genero:</label><input type="text" name="genero" class="form-control"
-                                    value="<?php echo $mostrar['genero'] ?>">
+                                    value="<?php echo $mostrar['genero'] ?>"> <!-- muetra el genero del libro -->
                             </div>
 
-                            <label>cantidad Libro</label>
+                            <label>Estado de libro</label>
                             <select name="cantidad" class="form-select" aria-label="Default select example">
                                 <option><?php echo $mostrar['cantidad'] ?></option>
                                 <option>1</option>

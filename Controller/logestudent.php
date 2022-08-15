@@ -1,5 +1,8 @@
 
  <?php
+//ESTE ARCHIVO CONTIENE LOS METODOS Y CONSULTAS PARA EL INICIO DE SESIÓN DEL ESTUDIANTE(CORREO Y CONTRASEÑA)
+
+
 	require_once "../Model/conexion.php";
 	session_start();
 	if ($_POST) {
@@ -10,9 +13,9 @@
 		if ($Rpta > 0) {// SI SE ENCONTRO MAS DE UNA COINCIDENCIA EN LA BD
 			$dato = mysqli_fetch_array($query);// SE ALMACENA EN EL DATO y llama a la funcion mysqli  que toma la fila indicada (column)  de donde se hizo la consulta
 			$_SESSION['user'] = $dato;
-			$_SESSION['DNI'] = $dato['DNI'];//guarda los datos si se desa pasar a otro archivo
+			$_SESSION['DNI'] = $dato['DNI'];//guarda los datos si se desea pasar a otro archivo
 			$_SESSION['nombre'] = $dato['nombre']; 
-			header("location: ../View/catalogo_estudiante.php");/* llamar a otro formulario*/
+			header("location: ../View/catalogo_estudiante.php");/* llamar a otro Archivo*/
 			
 			$alert = "<div  style='color: green;'>
               Sesión Iniciada :)

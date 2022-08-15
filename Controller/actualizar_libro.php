@@ -1,8 +1,10 @@
 
 <?php
+//METODOS Y CONSULTAS PARA ACTUALIZAR LIBRO
+
 //$con = mysqli_connect("localhost","root","","bibliotecaepis");
 include '../Model/conexion.php';
-	$n_controls = $_POST['n_control'];
+	$n_controls = $_POST['n_control']; //variable que contiene el metodo _POST que hará que al editar libro de guarde la actualización
 	$deweweys = $_POST['dewewey'];
 	$titulos=$_POST['titulo'];
 	$autors=$_POST['autor'];

@@ -1,4 +1,3 @@
-
 <?php
 
 session_start();
@@ -9,52 +8,46 @@ if (!isset($_SESSION['user']) ){
 include('../Model/conexion.php'); 
 include('includes/menu_estudiante.php');
 
-
 ?>
-	<div class="container">
-<form class="row g-3">
-  <div class="col-md-6">
-    <label for="inputEmail4" class="form-label">Correo</label>
-    <input type="email" class="form-control" id="inputEmail4" placeholder="Escriba su correo institucional">
-  </div>
-  <div class="col-md-6">
-    <label for="inputPassword4" class="form-label">Codigo</label>
-    <input type="password" class="form-control" id="inputPassword4" placeholder="Escriba su codigo institucional">
-  </div>
-  <div class="col-12">
-    <label for="inputAddress" class="form-label">pregunta 1</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="Escriba su apreciación">
-  </div>
-  <div class="col-12">
-    <label for="inputAddress2" class="form-label">Pregunta 2</label>
-    <input type="text" class="form-control" id="inputAddress2" placeholder="Escriba su apreciación">
-  </div>
-  <div class="col-md-6">
-    <label for="inputCity" class="form-label">Lugar</label>
-    <input type="text" class="form-control" id="inputCity">
-  </div>
-  <div class="col-md-4">
-    <label for="inputState" class="form-label">Estado</label>
-    <select id="inputState" class="form-select">
-      <option selected>Elegir...</option>
-      <option>...</option>
-    </select>
-  </div>
-  <div class="col-md-2">
-    <label for="inputZip" class="form-label">Zip</label>
-    <input type="text" class="form-control" id="inputZip">
-  </div>
-  <div class="col-12">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck">
-      <label class="form-check-label" for="gridCheck">
-        Terminos y condiciones
-      </label>
-    </div>
-  </div>
-  <div class="col-12">
-    <button type="submit" class="btn btn-primary">Calificar</button>
-  </div>
-</form>
-</div>
+<div class="container-fluid">
+    <div id="main-containe">
+        <div class="card shadow mb-4">
+            <div class="container">
+                <div class="card-body">
+                    <form class="row g-3">
+                        <div class="col-md-12">
+                            <label for="inputPassword4" class="form-label"><strong>Codigo de estudiante</strong>
+                            </label>
+                            <!-- <input type="email" class="form-control" id="inputMail" required pattern="[a-z]{1,15}" > -->
+                            <input type="number" class="form-control" name="codigo" required="required"
+                                oninvalid="setCustomValidity('Díganos tu email')" oninput="setCustomValidity('')">
+                        </div>
+                        
+                       
+                            
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label"><p> <strong>¿Como calificarias tu experencia general a la biblioteca?</strong> </p></label>
+                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder=" satisfactoria, Insatisfactoria, Neutra">
+                        </div>
 
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label"><p> <strong><p> <strong> ¿Cuales son los 2 caracteristicas que te gusto de la biblioteca?</strong> </p></label>
+                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Diseño,Funcionabilidad">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1"><strong>Comentario o sugerencia</strong>
+                            </label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                                required></textarea>
+                        </div>
+                       
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

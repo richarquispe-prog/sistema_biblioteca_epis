@@ -127,7 +127,7 @@
                 </div>
                 <img src="../resources/img/sistemas.png">
                 <div class="modal-body">
-                    <form method="POST" action="../Controller/logadmin.php" class="adm_login" autocomplete="on">
+                    <form method="POST" action="../Controller/log_admin.php" class="adm_login" autocomplete="on">
 
                         <div class=" txt_field">
                             <input name="email_" type="email" required class="form-control" id="exampleInputEmail1" pattern=".+@unh.edu.pe" title="Ingrese un correo institucional de la UNH" >

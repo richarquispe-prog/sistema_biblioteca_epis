@@ -12,7 +12,7 @@
 			$_SESSION['user'] = $dato;
 			$_SESSION['DNI'] = $dato['DNI'];//guarda los datos si se desa pasar a otro archivo
 			$_SESSION['nombre'] = $dato['nombre']; 
-			header("location: ../View/catalogo.php");/* llamar a otro formulario*/
+			header("location: ../View/catalogo_estudiante.php");/* llamar a otro formulario*/
 			
 			$alert = "<div  style='color: green;'>
               Sesión Iniciada :)

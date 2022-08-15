@@ -1,4 +1,5 @@
 <?php
+//ESTE ARCHIVO CONTIENE LOS METODOS Y CONSULTAS PARA EL INICIO DE SESIÓN DEL ADMINISTRADOR (CORREO Y CONTRASEÑA)
 
 	session_start();
 	require_once ("../Model/conexion.php"); //----conexion a la BD

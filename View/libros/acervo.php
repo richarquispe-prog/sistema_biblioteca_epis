@@ -6,7 +6,6 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['tipo_usuario'] != "ADMINISTR
 }
 include('../../Model/conexion.php'); 
 include('../includes/menu_administrador.php');
-//include('../../Controller/registrar_libro.php'); 
 ?>
 <link rel="stylesheet" type="text/css" href="../../assets/Styles/estilos_pdf.css">
 
@@ -15,7 +14,7 @@ include('../includes/menu_administrador.php');
     <form action="../../Controller/registrar_libro.php" method="post" enctype="multipart/form-data">
         <div class="container text-center">
         </div>
-        <!--modal-->
+        <!--MUESTRA EL INTERFAZ DE AÑADIR LIBRO-->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -107,6 +106,7 @@ include('../includes/menu_administrador.php');
 </div>
 </div>
 </div>
+<!-- SE MUESTRA EL ACERVO BIBLIOGRAFICO CON LOS DATOS DE LOS LIBROS -->
 
 <div class="container-fluid">
     <div id="main-containe">
@@ -116,20 +116,21 @@ include('../includes/menu_administrador.php');
         <div class="card shadow mb-4">
             <div class="card-header py-3">
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                    data-bs-whatever="@mdo">AÑADIR LIBRO </button>
-                <!--AZULITO BOTON-->
+                    data-bs-whatever="@mdo">AÑADIR LIBRO </button> <!--AZULITO BOTON-->
+
             </div>
+
             <div class="container">
                 <div class="card-body">
                     <div class="table-responsive">
                         <table id="example" class="table table-sm" style="width:100%">
                             <thead>
                                 <tr>
+                                    <!-- TITULO DE LA TABLA-->
                                     <td>Número de Control</td>
                                     <td>Titulo</td>
                                     <td>Autor</td>
                                     <td>Editorial</td>
-                                    <!-- <td>Cantidad</td>															 -->
                                     <td>Estado</td>
                                     <td>Formato</td>
                                     <td>Acciones</td>
@@ -137,7 +138,7 @@ include('../includes/menu_administrador.php');
                                 </tr>
                             </thead>
 
-                            <?php 
+                            <?php  //ACTUALIZAR EL ESTADO DE LIBRO
 										$sql="SELECT * from libro";
 										$result=mysqli_query($conexion,$sql);
 										while($mostrar=mysqli_fetch_array($result)){			
@@ -169,23 +170,23 @@ include('../includes/menu_administrador.php');
 
 								                   
 										 ?>
-
+                            <!-- MOSTRAR DATOS DEL LIBRO EN LA TABLA-->
                             <tr>
-                                <td><?php echo $mostrar['n_control'] ?></td>
-                                <td><?php echo $mostrar['titulo'] ?></td>
-                                <td><?php echo $mostrar['autor'] ?></td>
-                                <td><?php echo $mostrar['editorial'] ?></td>
-                                <!-- <td><?php //echo $mostrar['cantidad'] ?></td>				 -->
+                                <td><?php echo $mostrar['n_control'] ?></td> <!--se muestra en numero de control del libro-->
+                                <td><?php echo $mostrar['titulo'] ?></td> <!-- se muestra el titulo del libro -->
+                                <td><?php echo $mostrar['autor'] ?></td> <!-- se muestra el autor del libro -->
+                                <td><?php echo $mostrar['editorial'] ?></td> <!-- se muestra el editorial del libro -->
                                 <td><?php echo $estado; ?></td>
                                 <!--ESTADO-->
-                                <td><span class="badge bg-warning text-dark"><?php echo $mostrar['formato'] ?></span>
+                                <td>
+                                    <span class="badge bg-warning text-dark"><?php echo $mostrar['formato'] ?></span> <!-- se muestra el formato del libro-->
                                 </td>
                                 <td><a href="ed_libro.php?n_control= <?php echo $mostrar['n_control'];?>"
-                                        class="btn btn-success">Editar</a></td>
+                                        class="btn btn-success">Editar</a></td> <!-- muestra el boton Editar para editar alguna información del libro -->
                                 <td><a href="../../Controller/eliminar_libro.php?n_control=<?php echo $mostrar['n_control']; ?>"
                                         class="btn btn-danger"
                                         onclick="return confirm('¿Esta Seguro que desea eliminar Libro?'); false">
-                                        Eliminar
+                                        Eliminar <!-- muestra el boton Eliminar para eliminar el libro de la base datos -->
                                     </a>
                                 </td>
 

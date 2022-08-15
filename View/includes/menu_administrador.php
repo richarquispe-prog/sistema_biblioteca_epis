@@ -29,7 +29,7 @@
                 <div class="sidebar-brand-text mx-1">BIBLIOTECA EPIS</div>
             </a>            
             
-            <hr class="sidebar-divider my-2"><!-- LINEA DIVISOR DE LOS CADA UNO DE LOS NAVEGADORES -->
+            <hr class="sidebar-divider my-2"> <!-- LINEA DIVISOR DE CADA UNO DE LOS NAVEGADORES -->
             
             <!-- NAVEGADOR DEL ADMINISTRADOR (LIBRO, BOLETAS, USUARIOS, REPORTES) -->
             <li class="nav-item">
@@ -46,8 +46,7 @@
                  REPORTES</a>            	
             </li>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider my-2">
+            <hr class="sidebar-divider my-2"> <!-- LINEA DIVISOR DE CADA UNO DE LOS NAVEGADORES -->
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">

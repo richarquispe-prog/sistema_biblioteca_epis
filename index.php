@@ -1,3 +1,5 @@
 <?php
-header("Location: View/");
+//INDEX GENERAL
+
+header("Location: View/"); //HACEMOS QUE NOS EJECUTE TODO EL ARCHIVO VIEW
 ?>

@@ -19,6 +19,7 @@
 </head>
 
 <body>
+    <!-- VENTANA DE INICIO GENERAL -->
 <header class="cabecera">
         <div class="cabecera__fondo--nitido"></div>
         <div class="cabecera__capa"></div>
@@ -27,6 +28,7 @@
             <h1>SISTEMA DE BIBLIOTECA</h1>
             <p>Escuela Profesional de Ingenieria de Sistemas</p>
         </div>
+        <!--AQUI TENDREMOS DIFERENTES NAVEGADORES DE VENTANA DE INICIO-->
         <nav class="nav">
             <div class="nav__columna nav__pull"></div>
             <ul class="nav__columna nav__enlaces">
@@ -71,9 +73,7 @@
     </section>
 
 
-    <!-- MODALS -->
-
-    <!-- Modal: Login Student -->
+    <!-- MODAL PARA EL LOGEO DEL ESTUDIANTE-->
     <div class="modal fade" id="estudent" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
         style="color: black;">
         <div class="modal-dialog">
@@ -115,7 +115,7 @@
         </div>
     </div>
 
-    <!-- Modal: Login Admin -->
+    <!-- MODAL PARA EL LOGEO DEL ADMINISTRADOR -->
     <div class="modal fade" id="addprofile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
         style="color: black;">
         <div class="modal-dialog">
@@ -159,6 +159,7 @@
     </div>
 
 </body>
+<!-- PIE DE PAGINA DE INICIO -->
 <footer class="pie_pagina">
     <center>
         <p>©Copyright 2050 EQUIPO 4. Todos los derechos reservados.</p>

@@ -11,7 +11,7 @@ $insertar = "INSERT INTO calificacion (codigo,calificar,caracteristica,comentari
 //PASAMOS COMO PARAMETRO A MYSQLI_QUERY LA CONEXION Y LA VARIABLE INSERTAR
 
 $query = mysqli_query($conexion, $insertar);
-//PVERIFICAR LA CONEXION Y SI  ES TRUE NS ENVIARA UN MENSAJE 
+//PVERIFICAR LA CONEXION Y SI  ES TRUE NS ENVIARA UN MENSAJE EN UN ALERT
 if($query){
 
    echo "<script> alert('se registro con exito');

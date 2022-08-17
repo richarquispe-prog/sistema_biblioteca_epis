@@ -2,8 +2,9 @@
 	include ('../Model/conexion.php'); //Conexion a la bd
     //include_once(".conexion.phpconexion.php");
 	if ($_POST) {
-		/*  obtener valores de los -input-  y guardar en las variables */
-		$DNI = $_POST['dni'];  
+		
+		//metodo post para obtener los datos de los imput del formulario 
+		$DNI = $_POST['dni']; 
 		$nom = $_POST['nombre'];
 		$apellidos = $_POST['apellidos'];
 		$celular = $_POST['celular'];
@@ -13,6 +14,7 @@
 
 		$result = 0;
 		if (is_numeric($DNI) and $DNI != 0) {
+			//en la variable query se verificara y se aladira mas usuarios a la DB
 		 	$query = mysqli_query($conexion, "SELECT * FROM usuarios WHERE DNI = '$DNI'");
 		 	$result = mysqli_fetch_array($query);
             header("Location: ../View/usuarios/lista_usuario.php");

@@ -23,7 +23,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['tipo_usuario'] != "ADMINISTR
                     <div class="table-responsive">
                         <table id="example" class="table table-sm" style="width:100%">
                             <thead>
-                                <!-- TABLA PARA VISUALIAR LA COLUMNA DE LA TABLA  -->
+                                <!-- TABLA PARA VISUALIzAR LA COLUMNA DE LA TABLA  -->
                                 <tr>
                                     <td>CODIGO BOLETA </td>
                                     <td>Nombre </td>
@@ -49,7 +49,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['tipo_usuario'] != "ADMINISTR
 							//BUCLE WHILE  PARA RECORER LAS FILAS DE LA TABLA DEL BOLETA
 							while($mostrar=mysqli_fetch_array($result1)){	
 							?>
-                            <!--  AQUI SE MOSTRARA TOO EL CONTENIDO DE LA TABLA BOLETA -->
+                            <!--  AQUI SE MOSTRARA TOO EL CONTENIDO DE LA TABLA BOLETA DE DLA BASE DE DATO -->
                             <tr>
                                 <td><?php echo $mostrar['codigo_boleta'] ?></td>
                                 <td><?php echo $mostrar['nombre'] ?></td>

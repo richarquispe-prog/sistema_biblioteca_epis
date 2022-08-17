@@ -6,7 +6,7 @@ $n_controls= $_GET['n_control'];
 //CONSULTA SQL PARA EDITAR LIBRO 
 $sql="SELECT * from libro WHERE n_control='$n_controls'";
 $result=mysqli_query($conexion,$sql);
-//PVERIFICAR LA CONEXION Y SI  ES TRUE NS ENVIARA UN MENSAJE EN UN ALERT
+//VERIFICA LA CONEXION Y SI  ES TRUE NOS ENVIARA A KA SIGUIENTE PESTAÑA DE EDITAR LIBRO
 
 while($mostrar=mysqli_fetch_array($result)){
 

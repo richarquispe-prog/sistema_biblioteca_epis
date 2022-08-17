@@ -1,12 +1,12 @@
 <?php
 include '../Model/conexion.php';
 if ($_POST) {
-	$deweweys=$_POST["dewewey"];
-	$titulos=$_POST["titulo"];
-	$autors=$_POST["autor"];
-	$fechas=$_POST["fecha"];
-	$editorials=$_POST["editorial"];	
-	$fecha_ads=$_POST["fecha_ad"];
+	$deweweys=$_POST["dewewey"];//Metodo post para recibir informacion del dewey
+	$titulos=$_POST["titulo"];//Metodo post para recibir informacion del titulo
+	$autors=$_POST["autor"];//Metodo post para recibir informacion del autor
+	$fechas=$_POST["fecha"];//Metodo post para recibir informacion de la fecha
+	$editorials=$_POST["editorial"];	//Metodo post para recibir informacion del  editorial 
+	$fecha_ads=$_POST["fecha_ad"];//Metodo post para recibir informacion de la fecha add
 	$archivo =$_FILES['imagen']['tmp_name'];//se guarda con file y se garda temporalmente
 	$destino = "../resources/imagenes/".$_FILES['imagen']['name'];//carpeta de guardar
 	move_uploaded_file($archivo, $destino);

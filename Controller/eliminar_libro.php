@@ -8,7 +8,8 @@ include '../Model/conexion.php';
 
 	$eliminar="DELETE  FROM libro  WHERE  n_control=$n_control"; //consulta sql para eliminar libro de la base de datos
 
-	
+	//PVERIFICAR LA CONEXION Y SI  ES TRUE NS ENVIARA UN MENSAJE EN UN ALERT
+
 	if(mysqli_query($conexion,$eliminar)){ //condicional para eliminar libro
 		/*echo" dato guardado";*/
 		

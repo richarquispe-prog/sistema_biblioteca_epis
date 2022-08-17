@@ -6,7 +6,8 @@ include '../Model/conexion.php';
 
 	$eliminar="DELETE  FROM usuarios  WHERE  DNI=$DNI";
 
-	
+	//PVERIFICAR LA CONEXION Y SI  ES TRUE NS ENVIARA UN MENSAJE EN UN ALERT
+
 	if(mysqli_query($conexion,$eliminar)){
 		/*echo" dato guardado";*/
 		

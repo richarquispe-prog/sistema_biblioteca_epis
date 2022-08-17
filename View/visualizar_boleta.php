@@ -1,3 +1,5 @@
+<!--ARCHIVO QUE ALMACENA EL CODIGO DE VISUALIZAR BOLETA EN LADO DEL ESTUDIANTE-->
+
 <?php
 	session_start();
 
@@ -9,13 +11,10 @@
 	include '../Model/conexion.php';
 
  ?>
-<!--iconoooo-->
-<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />-->
 
-
+<!-- MUESTRAR EL INTERFAZ DE BOLETA EN EL LADO DE ESTUDIANTE  -->
 <div class="container-fluid">
-    <div id="main-containe">
-        <!--<center><h1>BOLETAS</h1></center>-->
+    <div id="main-containe">        
         <div class="card shadow mb-4">
             <div class="card-header py-3">
                 <center>
@@ -25,8 +24,8 @@
             <div class="container">
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table id="example" class="table table-sm" style="width:100%">
-                            <thead>
+                        <table id="example" class="table table-sm" style="width:100%"> <!-- CON LA ETIQUETA TABLE HACEMOS LA TABLA DE BOLETA -->
+                            <thead> <!-- LA ETIQUETA THEAD MAQUETA EL TITULO DE LA TABLA -->
                                 <tr>
                                     <td>CODIGO BOLETA </td>
                                     <td>DNI </td>
@@ -43,10 +42,10 @@
 
                             <?php 
 							$sql="SELECT boleta.codigo_boleta, boleta.DNI, libro.titulo, boleta.n_control, boleta.fecha_entrega, boleta.fecha_devolucion from boleta  INNER JOIN libro ON boleta.n_control = libro.n_control WHERE DNI=$var";
-							$result=mysqli_query($conexion,$sql);					
+							$result=mysqli_query($conexion,$sql);	 //DECLARAMOS LA VARIABLE "result" Y ENVIAMOS LA CONSULTA SQL QUE ALMACENAMOS EN $sql mediante el paramtro de la función mysqli_query				
 							while($mostrar = mysqli_fetch_array($result)){		
 							?>
-
+                            <!-- mostramos los datos de la boleta realizada por el usuario -->
                             <tr>
                                 <td><?php echo $mostrar['codigo_boleta'] ?></td>
                                 <td><?php echo $mostrar['DNI'] ?></td>
@@ -55,8 +54,8 @@
                                 <td><?php echo $mostrar['fecha_entrega'] ?></td>
                                 <td><?php echo $mostrar['fecha_devolucion'] ?></td>
                                 <td><a target="_black"
-                                        href="fpdf.php?codigo_boleta= <?php echo $mostrar['codigo_boleta'];?>"
-                                        class="btn btn-outline-success">Boleta</a></td>
+                                        href="fpdf.php?codigo_boleta= <?php echo $mostrar['codigo_boleta'];?>" 
+                                        class="btn btn-outline-success">Boleta</a></td> <!-- muestra el boton "Boleta" en la columna "Acción" -->
 
                             </tr>
                             <?php 

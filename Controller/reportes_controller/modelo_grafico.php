@@ -25,6 +25,7 @@ class Modelo_Grafico{
 	}
 
 	function TraerDatosGraficoParametro($fechainicio, $fechafin){
+		//consulta para mostrar los libros 
 		$sql = "SELECT libro.titulo, boleta.fecha_entrega FROM libro JOIN boleta on libro.n_control	 = boleta.n_control";	
 		$arreglo = array();
 		if ($consulta = $this->conexion->conexion->query($sql)) {

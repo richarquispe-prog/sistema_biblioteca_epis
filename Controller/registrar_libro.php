@@ -16,11 +16,9 @@ if ($_POST) {
 	$archivo1 =$_FILES['pdf']['tmp_name'];
 	$destino1 = "../resources/pdf/".$_FILES['pdf']['name'];
 	move_uploaded_file($archivo1, $destino1);
+	//Consulta sql para añadir un nuevo libro a la tabla de la DB
 	$insertar="INSERT INTO libro(n_control, dewey, titulo, autor, fecha_edicion, editorial, cantidad, fecha_adquisicion, imagen, estado, genero, formato,PDF) VALUES('', '$deweweys','$titulos','$autors','$fechas','$editorials','1','$fecha_ads', '$destino','$estados','$generos','$formatos','$destino1')";
 	if(mysqli_query($conexion,$insertar)){
-		/*echo" dato guardado";*/		
-		// $alert = "<div  style='color: green;'>libro registrado </div>";
-        // echo $alert;
         header("location: ../View/libros/acervo.php");
 	}else{
 		

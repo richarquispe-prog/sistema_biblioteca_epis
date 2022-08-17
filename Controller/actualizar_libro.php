@@ -17,11 +17,10 @@ include '../Model/conexion.php';
 	$generos=$_POST['genero'];
 	$formatos=$_POST['formato'];
 	$PDF=$_POST['PDF'];
-	
-
+	//CONSULTAS  SQL PARA ACTUALIZAR LOS DATOS QUE S VA MODIFICAR DEL LIBRO EXISTENTE 
 	$actualizar="UPDATE  libro SET  dewey='$deweweys',titulo='$titulos',autor='$autors', fecha_edicion='$fechas',editorial='$editorials',cantidad='$cantidads',fecha_adquisicion='$fecha_ads',imagen='$imagens',estado='$estados',genero='$generos',formato='$formatos',PDF='$PDF' WHERE n_control=$n_controls";
 
-	
+	//FUNCION PARA VER SI LA CONSULTA SE REALIZO CORRECTAMENTE 
 	if(mysqli_query($conexion,$actualizar)){
 		/*echo" dato guardado";*/
 		
@@ -29,7 +28,7 @@ include '../Model/conexion.php';
               libro actualizado </div>";
              header("location: ../View/libros/acervo.php");
 
-	}else{
+	}else{ // SI ALHO VA MAL EN LA CONSULTA NOS ENVIARA UNMENSAJE DE ERROR 
 		/*mysqli_error();*/
 		echo"error";
 	}

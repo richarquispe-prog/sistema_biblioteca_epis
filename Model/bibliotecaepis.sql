@@ -113,6 +113,42 @@ INSERT INTO `usuarios` (`nombre`, `apellidos`, `telefono`, `DNI`, `Correo_Instit
 ('Dr. Edison', 'Ramos Ñahui', 987654321, 71321445, '2019141032@unh.edu.pe', '123', '123', 'ESTUDIANTE     '),
 ('edison', 'Ramos Ñahui', 987989898, 71234144, '2018141017@unh.edu.pe', '|12', '|12', 'ESTUDIANTE');
 
+
+
+
+CREATE TABLE `calificacion` (
+  `codigo` int(255) NOT NULL,
+  `calificar` varchar(255) NOT NULL,
+  `caracteristica` varchar(255) NOT NULL,
+  `comentario` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `calificacion`
+--
+
+INSERT INTO `calificacion` (`codigo`, `calificar`, `caracteristica`, `comentario`) VALUES
+(541, 'Neutra', 'Funcionabilidad', 'jjljlk'),
+(2016141012, 'Insatisfactoria', 'Diseño', 'me gusto el software'),
+(2016141041, 'Satisfactoria', 'Funcionabilidad', 'esta chido el software'),
+(2019141031, 'Satisfactoria', 'Funcionabilidad', 'Funcion'),
+(2019141032, 'Insatisfactoria', 'Funcionabilidad', 'me gusto el software'),
+(2019141035, 'Neutra', 'Funcionabilidad', 'No me gusto el software');
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `calificacion`
+--
+ALTER TABLE `calificacion`
+  ADD PRIMARY KEY (`codigo`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 --
 -- Índices para tablas volcadas
 --

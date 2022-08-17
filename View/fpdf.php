@@ -1,4 +1,8 @@
 <?php
+
+
+// ARCHIVO QUE MUESTRA LA BOLETA EN PDF
+
 require '../Model/conexion.php';
 require('../assets/fpdf/fpdf.php');
 
@@ -25,7 +29,7 @@ $pdf->Ln();
 $pdf->Ln();
 
 
-//$pdf->image("../../assets/img/logo.png", 180, 10, 30, 30, 'PNG');
+// MOSTRAR LOS DATOS DEL USUARIO
 
 $pdf->SetFont('Arial', 'B', 10);
 $pdf->SetFillColor(0, 0, 0);
@@ -33,9 +37,10 @@ $pdf->SetTextColor(255, 255, 255);
 $pdf->Cell(196, 5, "Datos del Usuario", 1, 1, 'C', 1);
 $pdf->Ln();
 
-$id = $_GET['codigo_boleta'];
+$id = $_GET['codigo_boleta']; //Creamos una variable "id" donde almacenamos la información del campo 'codigo_boleta' que recibe la URL a traves del metodo _GET proveniente del formaulario.
 
-$sql1="SELECT boleta.codigo_boleta,usuarios.nombre,usuarios.apellidos,usuarios.DNI,usuarios.Correo_Institucional,usuarios.telefono,libro.n_control,libro.titulo,boleta.fecha_entrega,boleta.fecha_devolucion from usuarios JOIN boleta ON boleta.DNI= usuarios.DNI INNER JOIN libro ON libro.n_control= boleta.n_control WHERE `codigo_boleta`=$id";
+$sql1="SELECT boleta.codigo_boleta,usuarios.nombre,usuarios.apellidos,usuarios.DNI,usuarios.Correo_Institucional,usuarios.telefono,libro.n_control,libro.titulo,boleta.fecha_entrega,boleta.fecha_devolucion 
+from usuarios JOIN boleta ON boleta.DNI= usuarios.DNI INNER JOIN libro ON libro.n_control= boleta.n_control WHERE `codigo_boleta`=$id";
 	$result=mysqli_query($conexion,$sql1);
 while($mostrar=mysqli_fetch_array($result)){
 	$pdf->SetTextColor(0, 0, 0);
@@ -77,7 +82,7 @@ $pdf->Cell(20,5,$mostrar['telefono'],0,1,'L');
 
 	}			
 
-
+//MOSTRAR DATOS DEL LIBRO
 
 $pdf->Ln();
 
@@ -94,7 +99,8 @@ $pdf->SetTextColor(0, 0, 0);
 
 
 
- $sql = "SELECT boleta.codigo_boleta,boleta.fecha_entrega,usuarios.nombre,usuarios.apellidos,usuarios.DNI,usuarios.Correo_Institucional,usuarios.telefono,libro.n_control,libro.titulo,libro.autor,libro.fecha_adquisicion,boleta.fecha_entrega,boleta.fecha_devolucion from usuarios JOIN boleta ON boleta.DNI= usuarios.DNI INNER JOIN libro ON libro.n_control= boleta.n_control WHERE `codigo_boleta`=$id";
+ $sql = "SELECT boleta.codigo_boleta,boleta.fecha_entrega,usuarios.nombre,usuarios.apellidos,usuarios.DNI,usuarios.Correo_Institucional,usuarios.telefono,libro.n_control,libro.titulo,libro.autor,libro.fecha_adquisicion,boleta.fecha_entrega,boleta.fecha_devolucion 
+ from usuarios JOIN boleta ON boleta.DNI= usuarios.DNI INNER JOIN libro ON libro.n_control= boleta.n_control WHERE `codigo_boleta`=$id";
 $result=mysqli_query($conexion,$sql);
 while($mostrar=mysqli_fetch_array($result)){
 $pdf->SetFont('Arial', '', 10);

@@ -75,7 +75,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['tipo_usuario'] != "ADMINISTR
 
                                 <td>
                                     <a href="../../Controller/eliminar_boleta_adm.php?codigo_boleta=<?php echo $mostrar['codigo_boleta']; ?>"
-                                        class="btn btn-danger">
+                                        class="btn btn-danger" onclick="return confirm('¿Esta Seguro que desea eliminar boleta?'); false">                                        
                                         Eliminar
                                     </a>
                                 </td>

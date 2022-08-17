@@ -1,3 +1,5 @@
+<!-- ARCHIVO QUE ALMACENA CODIGO PARA MOSTRAR LA BOLETA GENERADA - DESPUES DE SOLICITAR LIBRO ( LADO ESTUDIANTE ) -->
+
 <?php 
 session_start();
 
@@ -56,8 +58,8 @@ while($mostrar=mysqli_fetch_array($result)){?>
                     <h5><?php echo $var ?></h5>
                     <!-- <a href="#" class="btn btn-primary">Go somewhere</a>-->
                     <form action="" method="post">
-                        <center> <a href="catalogo.php" class="btn btn-secondary">Cancelar</a>
-                            <input type="submit" value="Aceptar Boleta" class="btn btn-primary" disabled name="v">
+                        <center> <a href="catalogo_estudiante.php" class="btn btn-secondary">Cancelar</a>
+                        <input type="submit" value="Aceptar Boleta" class="btn btn-primary" disabled name="v">
                     </form>
                     <br> <br>
                 </div>
@@ -152,7 +154,7 @@ while($mostrar=mysqli_fetch_array($result)){?>
 
                         <center> <a href="catalogo_estudiante.php" class="btn btn-secondary">Cancelar</a>
 
-                            <input type="submit" value="Aceptar Boleta" class="btn btn-primary" name="v">
+                            <input  type="submit" value="Aceptar Boleta" class="btn btn-primary" name="v">
 
                     </form>
                     <br> <br>

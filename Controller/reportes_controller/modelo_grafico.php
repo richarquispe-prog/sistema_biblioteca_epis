@@ -1,21 +1,11 @@
 
 <?php
 class Modelo_Grafico{
-	//private $conexion;
-	//function __construct()
-	//{
-	//	require('../../Model/conexion.php');
-	//	$this->conexion = new Conexion("localhost", "root", "", "bibliotecaepis");
-	//	$this->conexion->conectar();
-	//}
-
-
-
-	function TraerDatosGraficoBar(){
+	
+	function TraerDatosGraficoBar(){ // FUNCION DONDE HAREMOS LAS CONSULTAS sql PARA OBTENER DATOS DEL LIBRO DE LA BASE DE DATOS
 		require ("../../Model/conexion.php");
-		$sql = "SELECT * FROM libro JOIN boleta ON libro.n_control = boleta.n_control";	
-		$arreglo = mysqli_query($conexion, $sql);
-		//if ($consulta = mysqli_fetch_array($arreglo)) {
+		$sql = "SELECT * FROM libro JOIN boleta ON libro.n_control = boleta.n_control";	// CONSULTA SQL PARA LA TABLA LIBRO
+		$arreglo = mysqli_query($conexion, $sql); //ENVIAMOS LA CONSULTA QUE ALMACENAMOS EN LA VARIABLE $sql 
 
 			while ($consulta_VU = mysqli_fetch_array($arreglo)) {
 				$arreglo_1[] = $consulta_VU;

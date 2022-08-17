@@ -1,3 +1,6 @@
+<!-- MOSTRAR GRAFICO ESTADISTICO DE GENEROS DE LIBRO MAS SOLICITADOS -->
+
+
 <!--Bootstrap CSS - Estadistica-->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -21,13 +24,13 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-lg-4">
-                        <canvas id="graficobarvertical" width="100" height="100"></canvas>
+                        <canvas id="graficobarvertical" width="100" height="100"></canvas> <!-- muestra el grafico estadistico en barra vertival -->
                     </div>
                     <div class="col-lg-4">
-                        <canvas id="graficobarhorizontal" width="100" height="100"></canvas>
+                        <canvas id="graficobarhorizontal" width="100" height="100"></canvas> <!-- muestra el grafico estadistico en barra horizontal -->
                     </div>
                     <div class="col-lg-4">
-                        <canvas id="graficopie" width="100" height="100"></canvas>
+                        <canvas id="graficopie" width="100" height="100"></canvas> <!-- muestra el grafico estadistico en circulo -->
                     </div>
                 </div>
             </div>
@@ -84,11 +87,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
 
 <script>
-CargarDatosGraficoBar();
-CargarDatosGraficoBarHorizontal();
-CargarDatosGraficoPie();
+CargarDatosGraficoBar(); // LLAMA A LA FUNCION CargarDatosGraficoBar()
+CargarDatosGraficoBarHorizontal(); // llama a la funcion CargarDatosGraficoBarHorizontal()
+CargarDatosGraficoPie(); //llama a la función CargarDatosGraficoPie()
 
-function CargarDatosGraficoBar() {
+function CargarDatosGraficoBar() { //declaramos la función CargarDatosGraficoBar() para mostrar el grafico de barra vertical
     $.ajax({
         url: '../../Controller/reportes_controller/controlador_grafico.php',
         type: 'POST'
@@ -110,14 +113,11 @@ function CargarDatosGraficoBar() {
 
             CrearGrafico(listaNombres, listaStock, colores, 'bar', 'GRAFICO EN BARRA VERTICAL',
                 "graficobarvertical");
-
-
-
         }
     })
 }
 
-function CargarDatosGraficoBarHorizontal() {
+function CargarDatosGraficoBarHorizontal() { //declaramos la función  CargarDatosGraficoBarHorizontal() para mostrar el grafico de barra horizontal
     $.ajax({
         url: '../../Controller/estadistica/controlador_grafico.php',
         type: 'POST'

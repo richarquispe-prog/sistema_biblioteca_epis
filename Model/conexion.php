@@ -1,7 +1,7 @@
 <?php
 
     $hostname = "localhost";//EL NOMBRE DE SERVIDOR 
-    $user = "root";//NOMBRE DE USUARIO DE MYSQL 
+    $user = "root";//NOMBRE DE USUARIO QUE SE REGISTRO EN  MYSQL 
     $pass = ""; // PASSWORD DEL USUARIO DE MYSQL 
     $database = "bibliotecaepis"; //NOMBRE LA BASE DE DATO 
 //realizando la conexion pasamos los varibles en la funcion de mysql_connect

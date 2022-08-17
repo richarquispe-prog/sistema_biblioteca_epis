@@ -1,122 +1,112 @@
 <?php
 session_start();
-include('../includes/menu_administrador.php');
-include('../../Model/conexion.php');
-
+include('../includes/menu_administrador.php');//INCLUYENDO EL HEADER  
+include('../../Model/conexion.php');//INCLUYENDO LA CONEXION  CON LA DB
+//CONSULTA QUE VERIFICA QUE EL USUARIO ESTA LOGEADO 
 if (!isset($_SESSION['user']) || $_SESSION['user']['tipo_usuario'] != "ADMINISTRADOR"){
 	header("Location: ../");
 }
 
 
  ?>
- <link rel="stylesheet" type="text/css" href="../../assets/Styles/estilos_pdf.css">
- 
-	<div class="container-fluid">
-		<div id="main-containe">    
-		<center><h2>LISTA DE BOLETAS</h2></center>
-		<div class="card shadow mb-4">
-			<div class="container">
-				<div class="card-body">
-                    <div class="table-responsive">           
-						<table  id="example" class="table table-sm" style="width:100%" >
-							<thead>
-							<tr><td>CODIGO BOLETA </td>
-								<td>Nombre </td>
-								<td>Apellidos </td>
-								<td>DNI </td>
-								<!--<td>Correo </td>-->
-								<td>Libro </td>
-								<td>NUMERO DE CONTROL</td>
-								
-								<td>FECHA DE ENTREGA</td>
-								<td>FECHA DE DEVOLUCION</td>
-								<td>Acciones</td>	
-								
-								
-							</tr>
-							</thead>
+<!-- INCLUYENFO EL ARCHIVO CSS PAR LA PAGINA  -->
+<link rel="stylesheet" type="text/css" href="../../assets/Styles/estilos_pdf.css">
 
-							<?php 
-							//$sql="SELECT * from boleta ";
+<div class="container-fluid">
+    <div id="main-containe">
+        <center>
+            <h2>LISTA DE BOLETAS</h2>
+        </center>
+        <div class="card shadow mb-4">
+            <div class="container">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table id="example" class="table table-sm" style="width:100%">
+                            <thead>
+                                <!-- TABLA PARA VISUALIAR LA COLUMNA DE LA TABLA  -->
+                                <tr>
+                                    <td>CODIGO BOLETA </td>
+                                    <td>Nombre </td>
+                                    <td>Apellidos </td>
+                                    <td>DNI </td>
+                                    <!--<td>Correo </td>-->
+                                    <td>Libro </td>
+                                    <td>NUMERO DE CONTROL</td>
+
+                                    <td>FECHA DE ENTREGA</td>
+                                    <td>FECHA DE DEVOLUCION</td>
+                                    <td>Acciones</td>
+
+
+                                </tr>
+                            </thead>
+
+                            <?php 
+							//CONSULTA PARA VER LOS DATOS DED LA DB 
 							$sql1=" SELECT boleta.codigo_boleta, usuarios.nombre, usuarios.apellidos, usuarios.DNI, usuarios.Correo_Institucional, libro.n_control, libro.titulo,boleta.fecha_entrega,boleta.fecha_devolucion from usuarios JOIN boleta ON boleta.DNI= usuarios.DNI INNER JOIN libro ON libro.n_control= boleta.n_control";
 							$result1=mysqli_query($conexion,$sql1);
 							
-
+							//BUCLE WHILE  PARA RECORER LAS FILAS DE LA TABLA DEL BOLETA
 							while($mostrar=mysqli_fetch_array($result1)){	
 							?>
+                            <!--  AQUI SE MOSTRARA TOO EL CONTENIDO DE LA TABLA BOLETA -->
+                            <tr>
+                                <td><?php echo $mostrar['codigo_boleta'] ?></td>
+                                <td><?php echo $mostrar['nombre'] ?></td>
+                                <td><?php echo $mostrar['apellidos'] ?></td>
+                                <td><?php echo $mostrar['DNI'] ?></td>
+                                <td><?php echo $mostrar['titulo'] ?></td>
+                                <td><?php echo $mostrar['n_control'] ?></td>
+                                <td><?php echo $mostrar['fecha_entrega'] ?></td>
 
-							<tr>
-								<td><?php echo $mostrar['codigo_boleta'] ?></td>
-								<td><?php echo $mostrar['nombre'] ?></td>
-								<td><?php echo $mostrar['apellidos'] ?></td>
-								<td><?php echo $mostrar['DNI'] ?></td>			
-								<td><?php echo $mostrar['titulo'] ?></td>
-								<td><?php echo $mostrar['n_control'] ?></td>
-								<td><?php echo $mostrar['fecha_entrega'] ?></td>
-
-								<?php
+                                <?php
 
 								if ($mostrar['fecha_devolucion'] == null){
 									?>
-									<td><span class="badge bg-warning text-dark">Pendiente</span></td>
-									<?php
+                                <td><span class="badge bg-warning text-dark">Pendiente</span></td>
+                                <?php
 								}else{
 									?>
-									<td><?php echo $mostrar['fecha_devolucion'] ?></td>
-									<?php
+                                <td><?php echo $mostrar['fecha_devolucion'] ?></td>
+                                <?php
 								}
 
 								?>
-								
-								<td>
-									<a href="../../Controller/eliminar_boleta_adm.php?codigo_boleta=<?php echo $mostrar['codigo_boleta']; ?>" class="btn btn-danger">
-										Eliminar
-									</a>
-								</td>
+
+                                <td>
+                                    <a href="../../Controller/eliminar_boleta_adm.php?codigo_boleta=<?php echo $mostrar['codigo_boleta']; ?>"
+                                        class="btn btn-danger">
+                                        Eliminar
+                                    </a>
+                                </td>
 
 
-								
-								
-							</tr>
-						<?php 
+
+
+                            </tr>
+                            <?php 
 						}
 						?>
-						</table>
-	</div>
-         </div>
-        </div>  
-    </div>  
-  
-  </div>
-<br><br>
-<!--<center>
-	<a href="añadirlibro.php" class="button1">Añadir libro</a>
-	</center>-->
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <br><br>
+
 </div>
- <!-- jQuery, Popper.js, Bootstrap JS -->
-    <script src="../../assets/jquery/jquery-3.3.1.min.js"></script>
-  <!--  <script src="popper/popper.min.js"></script>-->
-    <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
-      
-    <!-- datatables JS -->
-    <script type="text/javascript" src="../../assets/datatables/datatables.min.js"></script>    
-     
-    <script type="text/javascript" src="../../assets/formato.js"></script>
- 	<?php include('../includes/footer.php');?>
+<!-- jQuery, Popper.js, Bootstrap JS -->
+<script src="../../assets/jquery/jquery-3.3.1.min.js"></script>
+<!--  <script src="popper/popper.min.js"></script>-->
+<script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- datatables JS -->
+<script type="text/javascript" src="../../assets/datatables/datatables.min.js"></script>
+
+<script type="text/javascript" src="../../assets/formato.js"></script>
+<?php include('../includes/footer.php');?>
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

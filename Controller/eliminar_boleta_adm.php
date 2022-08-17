@@ -3,10 +3,11 @@
 include '../Model/conexion.php';
 	$codigo = $_GET['codigo_boleta'];
 	
-
+// CONSULTA SQL PARA PARA VER LA LISTA DE LAS BOLETAS 
 	$eliminar="DELETE  FROM boleta  WHERE  codigo_boleta=$codigo";
 
-	
+	//PVERIFICAR LA CONEXION Y SI  ES TRUE NS ENVIARA UN MENSAJE EN UN ALERT
+
 	if(mysqli_query($conexion,$eliminar)){
 		/*echo" dato guardado";*/
 		

@@ -9,10 +9,12 @@ include ('../Model/conexion.php');
 	$usuario=$_POST['usuario'];
 	
 	
+	//CONSULTAS  SQL PARA ACTUALIZAR LOS DATOS QUE Se VA MODIFICAR EN LOS USUARIOS REFISTRADOS EXISTENTE 
 
 	$actualizar="UPDATE  usuarios SET  nombre='$nombre',apellidos='$apellido',telefono='$telefono', Correo_Institucional='$correo',tipo_usuario='$usuario' WHERE DNI=$DNI";
 
-	
+		//FUNCION PARA VER SI LA CONSULTA SE REALIZO CORRECTAMENTE 
+
 	if(mysqli_query($conexion,$actualizar)){
 		/*echo" dato guardado";*/
 		
@@ -20,7 +22,7 @@ include ('../Model/conexion.php');
               libro actualizado </div>";
              header("location: ../View/usuarios/lista_usuario.php");
 
-	}else{
+	}else{// SI ALGO VA MAL EN LA CONSULTA NOS ENVIARA UNMENSAJE DE ERROR 
 		/*mysqli_error();*/
 		echo"error";
 	}

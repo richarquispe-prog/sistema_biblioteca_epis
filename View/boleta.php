@@ -97,8 +97,7 @@ $insertar="INSERT INTO boleta(DNI, n_control, fecha_entrega,codigo_boleta,fecha_
                     ?>
 
 
-<?php
-		//echo" dato guardado";		
+<?php	
 		
 	}else{
 		/*mysqli_error();*/
@@ -107,10 +106,7 @@ $insertar="INSERT INTO boleta(DNI, n_control, fecha_entrega,codigo_boleta,fecha_
 
 }
 		 }
-		 else{
-		 	//$alert = '<div class="alert alert-warning" role="alert">
-                        //no se puede prestar mas de  tres libros';
-		 	//echo "holisiiii"; 	
+		 else{	
 
 	 ?>
 <?php

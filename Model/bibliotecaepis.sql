@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-08-2022 a las 00:45:08
--- Versión del servidor: 10.4.24-MariaDB
--- Versión de PHP: 8.1.6
+-- Tiempo de generación: 17-08-2022 a las 20:43:50
+-- Versión del servidor: 10.4.21-MariaDB
+-- Versión de PHP: 7.3.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -82,7 +82,8 @@ INSERT INTO `libro` (`n_control`, `dewey`, `titulo`, `autor`, `fecha_edicion`, `
 (37, '147/G32', 'HTML 5', 'Dr. Edison', '2022-04-14', 'Ra-Ma', 1, '2022-08-01', 0x2e2e2f7265736f75726365732f696d6167656e65732f48544d4c2e6a7067, 'Disponible', 'Programación', 'Fisico', '../resources/pdf/', ''),
 (33, '1258/3EF', 'PROGRAMACION WEB', 'Gallego Sanchez', '2022-07-02', 'Ra-Ma', 1, '2022-08-05', 0x696d6167656e65732f70726f6772616d6163696f6e2d7765622e706e67, 'Disponible', 'Programación', 'Fisico', '../resources/pdf/', ''),
 (34, '1258/3EW', 'PROGRAMACION WEB 2', 'Gilmer Matos Vila', '2022-07-15', 'Ra-Ma', 1, '2022-07-14', 0x2e2e2f2e2e2f7265736f75726365732f696d6167656e65732f70726f6772616d6163696f6e2d7765622e706e67, 'Disponible', 'Programación', 'PDF', '../resources/pdf/', ''),
-(36, '147/G7', 'PHP 2', 'Dr. Edison', '2022-07-08', 'Ra-Ma', 1, '2022-08-04', 0x2e2e2f7265736f75726365732f696d6167656e65732f5048502e6a7067, 'Disponible', 'Programación', 'PDF', '../resources/pdf/', '');
+(36, '147/G7', 'PHP 2', 'Dr. Edison', '2022-07-08', 'Ra-Ma', 1, '2022-08-04', 0x2e2e2f7265736f75726365732f696d6167656e65732f5048502e6a7067, 'Disponible', 'Programación', 'PDF', '../resources/pdf/', ''),
+(39, '', '', '', '0000-00-00', '', 1, '0000-00-00', 0x2e2e2f7265736f75726365732f696d6167656e65732f, 'Disponible', '', '', '../resources/pdf/', '');
 
 -- --------------------------------------------------------
 
@@ -112,6 +113,42 @@ INSERT INTO `usuarios` (`nombre`, `apellidos`, `telefono`, `DNI`, `Correo_Instit
 ('Dr. Edison', 'Ramos Ñahui', 987654321, 71321445, '2019141032@unh.edu.pe', '123', '123', 'ESTUDIANTE     '),
 ('edison', 'Ramos Ñahui', 987989898, 71234144, '2018141017@unh.edu.pe', '|12', '|12', 'ESTUDIANTE');
 
+
+
+
+CREATE TABLE `calificacion` (
+  `codigo` int(255) NOT NULL,
+  `calificar` varchar(255) NOT NULL,
+  `caracteristica` varchar(255) NOT NULL,
+  `comentario` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `calificacion`
+--
+
+INSERT INTO `calificacion` (`codigo`, `calificar`, `caracteristica`, `comentario`) VALUES
+(541, 'Neutra', 'Funcionabilidad', 'jjljlk'),
+(2016141012, 'Insatisfactoria', 'Diseño', 'me gusto el software'),
+(2016141041, 'Satisfactoria', 'Funcionabilidad', 'esta chido el software'),
+(2019141031, 'Satisfactoria', 'Funcionabilidad', 'Funcion'),
+(2019141032, 'Insatisfactoria', 'Funcionabilidad', 'me gusto el software'),
+(2019141035, 'Neutra', 'Funcionabilidad', 'No me gusto el software');
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `calificacion`
+--
+ALTER TABLE `calificacion`
+  ADD PRIMARY KEY (`codigo`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 --
 -- Índices para tablas volcadas
 --
@@ -148,7 +185,7 @@ ALTER TABLE `boleta`
 -- AUTO_INCREMENT de la tabla `libro`
 --
 ALTER TABLE `libro`
-  MODIFY `n_control` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `n_control` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
